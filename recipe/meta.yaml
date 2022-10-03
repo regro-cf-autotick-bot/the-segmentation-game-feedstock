@@ -1,5 +1,5 @@
 {% set name = "the-segmentation-game" %}
-{% set version = "0.1.0" %}
+{% set version = "0.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/the-segmentation-game-{{ version }}.tar.gz
-  sha256: e039db9335b6e2718e8cb7610c4c3ce26ec7d1d2bb290355ad3fdbe2becfda6e
+  sha256: 4bbf4deadecb84efc893c6cea2d51e90374181589f2034050aa3cf8fa65872f3
 
 build:
   noarch: python
