@@ -6,24 +6,24 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/the-segmentation-game-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/the-segmentation-game-{{ version }}.tar.gz
   sha256: 4bbf4deadecb84efc893c6cea2d51e90374181589f2034050aa3cf8fa65872f3
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python {{ python_min }}
   run:
     - napari-plugin-engine >=0.1.4
     - napari-skimage-regionprops
     - napari-tools-menu
     - numpy
-    - python >=3.7
+    - python >={{ python_min }}
     - scikit-learn
 
 test:
@@ -34,6 +34,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/haesleinhuepf/the-segmentation-game
